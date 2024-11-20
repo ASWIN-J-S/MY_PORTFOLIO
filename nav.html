@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
+    
+    <style>
+        /* Custom Glass Effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Loading Progress Bar */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 0%;
+            background-color: #3b82f6;
+            z-index: 50;
+            transition: width 0.1s ease;
+        }
+
+        /* Popup Modal Styles */
+        #popup-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-black scroll-smooth">
+
+    <!-- Progress Bar -->
+    <div id="progress-bar"></div>
+
+    <!-- Navbar -->
+    <nav class="glass fixed w-full z-10 top-0 dark:bg-gray-900 text-gray-900 dark:text-white">
+        <div class="max-w-7xl mx-auto  sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#home" class="flex items-center space-x-3">
+                    <span class="text-3xl font-[Poppins]">ASWIN</span>
+                </a>
+                <button id="menu-toggle"
+                    class="inline-flex items-center p-2 text-gray-500 rounded-lg md:hidden focus:outline-none"
+                    aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <div id="navbar" class="hidden md:flex space-x-8 mt-4 md:mt-0 flex-col md:flex-row">
+                    <a href="#home" class="hover:text-blue-600">Home</a>
+                    <a href="#about" class="hover:text-blue-600">About</a>
+                    <a href="#projects" class="hover:text-blue-600">Projects</a>
+                    <a href="#resume" class="hover:text-blue-600">Resume</a>
+                    <a href="#contact" class="hover:text-blue-600">Contact</a>
+                </div>
+            </div>
+            <!-- Mobile Dropdown Menu -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <a href="#home" class="block px-4 py-2 text-gray-700 dark:text-white hover:bg-blue-600">Home</a>
+                <a href="#about" class="block px-4 py-2 text-gray-700 dark:text-white hover:bg-blue-600">About</a>
+                <a href="#projects" class="block px-4 py-2 text-gray-700 dark:text-white hover:bg-blue-600">Projects</a>
+                <a href="#resume" class="block px-4 py-2 text-gray-700 dark:text-white hover:bg-blue-600">Resume</a>
+                <a href="#contact" class="block px-4 py-2 text-gray-700 dark:text-white hover:bg-blue-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="flex items-center justify-center h-screen bg-[#172a45]">
+        <div class="2xl:container mx-auto">
+            <div class="w-[98%] mx-auto space-y-5 flex flex-col items-center md:grid md:grid-cols-2">
+                <!-- Left Content (Text) -->
+                <div class="">
+                    <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-5">
+                        <h1 class="font-[poppins] text-4xl text-[#8892b0]">
+                            Hi! I'm ASWIN J S
+                        </h1>
+                        <h1 class="font-[poppins] text-6xl text-[#a8b2d1]">
+                            FULL STACK WEB DEVELOPER
+                        </h1>
+                        <div class="space-y-5 space-x-0 md:space-x-5">
+                            <a href="#contact">
+                                <button
+                                    class="bg-transparent border border-[#64ffda] hover:bg-[#0E0E34] py-3 px-2 rounded-xl font-[poppins] w-32 text-white hover:text-[#64ffda]">
+                                    CONTACT
+                                </button>
+                            </a>
+                            <a href="./ASWIN_logo_no_background.png" download>
+                                <button
+                                    class="bg-transparent border border-[#64ffda] py-3 px-2 rounded-xl font-[poppins] w-32 text-white cursor-pointer">
+                                    RESUME
+                                    <i class="fa-solid fa-download"></i>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+    
+                    <!-- Right Content (Image) -->
+                    <div class="flex justify-center items-center w-full">
+                        <img src="./ASSETS/me.jpg" alt="Profile Picture"
+                            class=" w-40 h-40 md:w-64 md:h-64 rounded-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about"
+        class="flex items-center justify-center h-screen bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white">
+        <div class="max-w-3xl text-center">
+            <h2 class="text-4xl font-bold mb-4">About Me</h2>
+            <p class="text-lg">Hello! I'm a passionate developer with skills in front-end development. I enjoy learning
+                new technologies and improving my skills.</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects"
+        class="flex items-center justify-center h-screen bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-white">
+        <div class="max-w-5xl text-center">
+            <h2 class="text-4xl font-bold mb-8">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-2">Project One</h3>
+                    <p>A project description goes here. It showcases my skills in HTML, CSS, and JavaScript.</p>
+                </div>
+                <div class="p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-2">Project Two</h3>
+                    <p>This project demonstrates my experience using frameworks and libraries like React.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume"
+        class="flex items-center justify-center h-screen bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold mb-4">Resume</h2>
+            <p class="text-lg">Download my resume to learn more about my skills and experience.</p>
+            <a href="#"
+                class="mt-4 inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Download
+                Resume</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact"
+        class="flex items-center justify-center h-screen bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-white">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold mb-4">Contact Me</h2>
+            <form id="contact-form" class="space-y-4">
+                <input type="text" placeholder="Name"
+                    class="w-80 p-2 rounded border border-gray-300 dark:border-gray-700" required>
+                <input type="email" placeholder="Email"
+                    class="w-80 p-2 rounded border border-gray-300 dark:border-gray-700" required>
+                <input type="tel" placeholder="Mobile"
+                    class="w-80 p-2 rounded border border-gray-300 dark:border-gray-700" required>
+                <button type="submit"
+                    class="mt-4 inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Send
+                    Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Popup Modal -->
+    <div id="popup-modal">
+        <div class="modal-content">
+            <h3 class="text-lg font-bold">Thank you!</h3>
+            <p>Your message has been sent.</p>
+            <button id="close-modal" class="mt-4 bg-blue-600 text-white font-bold py-2 px-4 rounded">Close</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for Navbar Toggle, Scroll Progress Bar, and Modal -->
+    <script>
+        // Navbar Toggle for Mobile
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const isOpen = !mobileMenu.classList.contains('hidden');
+
+            if (isOpen) {
+                mobileMenu.classList.add('hidden');
+            } else {
+                mobileMenu.classList.remove('hidden');
+            }
+
+            // Optional: Toggle aria-expanded attribute for accessibility
+            this.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', function () {
+            const scrollTop = window.scrollY;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.getElementById('progress-bar').style.width = scrollPercent + '%';
+        });
+
+        // Modal functionality
+        const contactForm = document.getElementById('contact-form');
+        const popupModal = document.getElementById('popup-modal');
+        const closeModalButton = document.getElementById('close-modal');
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the default form submission
+            popupModal.style.display = 'flex'; // Show the modal
+        });
+
+        closeModalButton.addEventListener('click', function () {
+            popupModal.style.display = 'none'; // Hide the modal
+        });
+
+        // Close modal when clicking outside of it
+        popupModal.addEventListener('click', function (e) {
+            if (e.target === popupModal) {
+                popupModal.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO-ASWIN</title>
+    <link rel="shortcut icon" href="https://ik.imagekit.io/pp9tab6wk/PORTFOLIO/portfolio.png" type="image/x-icon">
+    <!-- NORMAL CSS -->
+    <link rel="stylesheet" href="./CSS/style.css">
+    <!-- TAILWIND CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FONT -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+        rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./CSS/nippo.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+    <div id="progress-bar"></div>
+
+    <nav class="glass fixed w-full z-10 top-0 nav-glass">
+        <div class="W-[98%] mx-auto sm:px-6 lg:px-4 lg:pt-2">
+            <div class="flex justify-between items-center h-12 mr-3 ml-6 lg:mr-10  lg:ml-10">
+                <!-- Logo -->
+                <a href="#home">
+                    <h1 class="text-[#64ffda] hover:text-white metal text-3xl track mr-10">
+                        ASWIN
+                    </h1>
+                </a>
+                <!-- Mobile Menu Toggle Button -->
+                <button id="menu-toggle"
+                    class="inline-flex items-center p-2 text-white hover:text-[#0E0E34] rounded-lg md:hidden focus:outline-none"
+                    aria-expanded="false">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+
+                <!-- Desktop Navbar Links -->
+                <div id="navbar" class="hidden md:flex space-x-8 mt-4 md:mt-0 flex-col md:flex-row">
+                    <ul class="flex flex-row justify-end  gap-16 text-white text-xl font-[poppins]">
+                        <li class="tracking-widest hover:text-[#64ffda] flex gap-1 justify-center items-center">
+                            <a href="#home">HOME</a>
+                        </li>
+                        <li class="tracking-widest hover:text-[#64ffda] flex gap-1 justify-center items-center">
+                            <a href="#about">
+                                ABOUT</a>
+                        </li>
+                        <li class="tracking-widest hover:text-[#64ffda] flex gap-1 justify-center items-center">
+                            <a href="#projects">PROJECTS</a>
+                        </li>
+                        <li class="tracking-widest hover:text-[#64ffda] flex gap-1 justify-center items-center ">
+                            <a href="#contact">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Mobile Dropdown Menu -->
+            <div id="mobile-menu"
+                class="hidden md:hidden flex-col space-y-2 py-2  text-white text-xl font-[poppins] rounded-lg shadow-lg text-center">
+                <a href="#home" class="block px-4 py-2 tracking-widest hover:text-[#64ffda]">HOME</a>
+                <a href="#about" class="block px-4 py-2 tracking-widest hover:text-[#64ffda]">ABOUT</a>
+                <a href="#projects" class="block px-4 py-2 tracking-widest hover:text-[#64ffda]">PROJECTS</a>
+                <a href="#contact" class="block px-4 py-2 tracking-widest hover:text-[#64ffda]">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME SECTION -->
+
+    <section id="home"
+        class="h-screen bg-gradient-to-r from-slate-900 to-slate-700 flex flex-col justify-center items-center">
+        <div class="2xl:container mx-auto px-4">
+            <div class="w-[98%] mx-auto">
+                <div class="flex flex-col-reverse lg:flex-row lg:justify-between items-center lg:space-y-0">
+                    <!-- Text Content -->
+                    <div
+                        class="flex flex-col justify-center items-center lg:items-start space-y-5 text-center lg:text-left pt-6 lg:py-0">
+                        <h1 class="font-[poppins] text-4xl lg:text-6xl text-[#8892b0]">Hi! I'm ASWIN J S</h1>
+                        <h1 class="font-[poppins] text-5xl lg:text-7xl text-[#a8b2d1]">FULL STACK WEB DEVELOPER</h1>
+                        <div
+                            class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-5">
+                            <a href="#contact">
+                                <button
+                                    class="bg-transparent border border-[#64ffda] hover:bg-[#0E0E34] py-3 px-2 rounded-xl font-[poppins] w-32 text-white hover:text-[#64ffda]">
+                                    CONTACT
+                                </button>
+                            </a>
+                            <a href="./ASWIN_logo_no_background.png" download>
+                                <button
+                                    class="bg-transparent border border-[#64ffda] py-3 px-2 rounded-xl font-[poppins] w-32 text-white cursor-pointer">
+                                    RESUME
+                                    <i class="fa-solid fa-download"></i>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Image Section -->
+                    <div>
+                        <img src="./ASSETS/me.jpg" alt="Profile Image" class="md:w-96 md:h-96 h-80 w-80 rounded-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="h-screen bg-gradient-to-r from-slate-800 to-slate-900">
+        <div class="2xl:container mx-auto px-5">
+            <div class="w-[98%] mx-auto text-center lg:text-center lg:top-0">
+                <!-- About Section Heading -->
+                <h1
+                    class="font-[poppins] text-4xl lg:text-6xl text-[#64ffda] hover:text-white pt-16 lg:text-start text-center">
+                    About Me</h1>
+                <!-- About Content -->
+                <div
+                    class=" text-left lg:ml-28 lg:mt-10 font-[poppins] text-[16px] lg:text-[24px] text-[#a8b2d1] leading-relaxed mt-6">
+                    <p>
+                        Hi, I’m <span class="text-[#64ffda] font-[poppins]">Aswin J S</span>, a creative and driven web
+                        developer with a Bachelor’s degree in Computer Applications (BCA) from Scott Christian College,
+                        Nagercoil, completed in 2024. My passion for technology and innovation inspired me to specialize
+                        in Full Stack MERN Development, where I gained hands-on experience in building modern,
+                        responsive, and dynamic websites. I believe in the power of collaboration and thrive in team
+                        environments that foster creativity and learning. My ability to work seamlessly with others and
+                        contribute meaningfully to projects has been a cornerstone of my growth as a developer. Beyond
+                        coding, I bring a creative flair to my work with my skills in photo and video editing. This
+                        unique combination of technical expertise and creative insight allows me to approach projects
+                        with a well-rounded perspective, delivering both functional and visually engaging results. I’m
+                        constantly looking to learn, grow, and contribute to exciting projects. Whether it’s creating
+                        websites from scratch, enhancing existing platforms, or exploring new ideas, I’m ready to bring
+                        my skills and enthusiasm to the table. Let’s connect and turn ideas into reality!
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROJECT SECTION -->
+    <section id="projects"
+        class="flex items-center justify-center h-screen bg-gradient-to-r from-[#0E0E34] to-[#252E8A] text-white">
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact"
+        class="flex items-center justify-center h-screen bg-gradient-to-r from-[#0E0E34] to-[#252E8A] text-white">
+    </section>
+
+
+
+    <script src="./APP/script.js"></script>
+
+
+
+</body>
+
+</html>
