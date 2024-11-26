@@ -1,0 +1,101 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    color: #1f2937;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #4b5563;
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .skill-icon {
+    width: 64px;
+    height: 64px;
+    transition: all 0.3s ease-in-out;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  }
+  
+  .skill-text {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #374151;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  /* Hover Effects */
+  .skill-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .skill-card:hover .skill-icon {
+    transform: scale(1.2);
+    filter: drop-shadow(0 4px 15px rgba(59, 130, 246, 0.7));
+  }
+  
+  .skill-card:hover .skill-text {
+    color: #1d4ed8;
+  }
+  
+  /* Unique Colors for Icons */
+  .skill-card:nth-child(1):hover .skill-icon {
+    filter: drop-shadow(0 4px 15px rgba(255, 115, 0, 0.7)); /* Orange for HTML */
+  }
+  
+  .skill-card:nth-child(2):hover .skill-icon {
+    filter: drop-shadow(0 4px 15px rgba(59, 130, 246, 0.7)); /* Blue for CSS */
+  }
+  
+  .skill-card:nth-child(3):hover .skill-icon {
+    filter: drop-shadow(0 4px 15px rgba(20, 184, 166, 0.7)); /* Teal for Tailwind */
+  }
+  
+  .skill-card:nth-child(4):hover .skill-icon {
+    filter: drop-shadow(0 4px 15px rgba(255, 193, 7, 0.7)); /* Yellow for JavaScript */
+  }
+  
+  .skill-card:nth-child(5):hover .skill-icon {
+    filter: drop-shadow(0 4px 15px rgba(59, 130, 246, 0.7)); /* Blue for React */
+  }
+  
+  .skill-card:nth-child(6):hover .skill-icon {
+    filter: drop-shadow(0 4px 15px rgba(34, 197, 94, 0.7)); /* Green for Node.js */
+  }
+  
+  .skill-card:nth-child(7):hover .skill-icon {
+    filter: drop-shadow(0 4px 15px rgba(107, 114, 128, 0.7)); /* Gray for Express.js */
+  }
+  
+  .skill-card:nth-child(8):hover .skill-icon {
+    filter: drop-shadow(0 4px 15px rgba(168, 85, 247, 0.7)); /* Purple for ChatGPT */
+  }
+  
